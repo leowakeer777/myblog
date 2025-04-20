@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My Assignments on My Hugo Blog</title>
+    <link>http://localhost/</link>
+    <description>Recent content in My Assignments on My Hugo Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Assignment2</title>
+      <link>http://localhost/report/assignment2/</link>
+      <pubDate>Sun, 20 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost/report/assignment2/</guid>
+      <description>&lt;h1 id=&#34;assignment-2-report-static-personal-blog-website&#34;&gt;Assignment 2 Report: Static Personal Blog Website&lt;/h1&gt;&#xA;&lt;p&gt;Name: liziao&lt;br&gt;&#xA;Student ID: [Your ID Here]&lt;br&gt;&#xA;Date: 2025/4/20&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-website-setup--tools&#34;&gt;1. Website Setup &amp;amp; Tools&lt;/h2&gt;&#xA;&lt;p&gt;This static website was built using Hugo, a fast and flexible static site generator. The theme used is Ananke, which is lightweight and easy to customize.&lt;/p&gt;&#xA;&lt;p&gt;The site consists of four assignment pages:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;assignment1.md&lt;/li&gt;&#xA;&lt;li&gt;assignment2.md&lt;/li&gt;&#xA;&lt;li&gt;assignment3.md&lt;/li&gt;&#xA;&lt;li&gt;assignment4.md&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;A custom homepage was created to display only four navigation links (Assignment 1 to Assignment 4), without any extra blog content.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Assignment1</title>
+      <link>http://localhost/report/assignment1/</link>
+      <pubDate>Tue, 25 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost/report/assignment1/</guid>
+      <description>&lt;h1 id=&#34;matrix-multiplication-project-report&#34;&gt;Matrix Multiplication Project Report&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Student Name&lt;/strong&gt;: [liziao]&lt;br&gt;&#xA;&lt;strong&gt;Student ID&lt;/strong&gt;: [ZY2457B15]&lt;br&gt;&#xA;&lt;strong&gt;Submission Date&lt;/strong&gt;: [2025/3/25]&lt;/p&gt;&#xA;&lt;h2 id=&#34;system-configuration&#34;&gt;System Configuration&lt;/h2&gt;&#xA;&lt;p&gt;List your system configuration as &lt;strong&gt;table of content here&lt;/strong&gt; here, including CPU model, memory size, operating system version, compiler version, python version.&lt;/p&gt;&#xA;&lt;p&gt;For Linux, check&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;CPU Model&lt;/strong&gt;: Intel(R) Xeon(R) Platinum 8352V CPU @ 2.10GHz&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Memory Size&lt;/strong&gt;: 503 GiB&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Operating System Version&lt;/strong&gt;: Ubuntu 5.15.0-94-generic (x86_64)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Compiler Version&lt;/strong&gt;: GCC 9.4.0&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Python Version&lt;/strong&gt;: Python 3.8.10&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;implementation-details&#34;&gt;Implementation Details&lt;/h2&gt;&#xA;&lt;h3 id=&#34;c-language-implementation&#34;&gt;C Language Implementation&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Source Code&lt;/strong&gt;:&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;&#xA;#include &amp;lt;stdlib.h&amp;gt;&#xA;#include &amp;lt;time.h&amp;gt;  &#xA;// Function: Perform matrix multiplication C = A * B&#xA;// A: m x n, B: n x p, C: m x p&#xA;void matrix_multiply(double** A, double** B, double** C, int m, int n, int p) {&#xA;    int i, j, k;&#xA;    // Triple nested loops for matrix multiplication&#xA;    for (i = 0; i &amp;lt; m; i++) {&#xA;        for (j = 0; j &amp;lt; p; j++) {&#xA;            C[i][j] = 0.0;  // Initialize&#xA;            for (k = 0; k &amp;lt; n; k++) {&#xA;                C[i][j] += A[i][k] * B[k][j];&#xA;            }&#xA;        }&#xA;    }&#xA;}&#xA;&#xA;int main() {&#xA;    // Example: A is 2x3, B is 3x2&#xA;    int m = 2, n = 3, p = 2;&#xA;    int i, j;&#xA;&#xA;    // Dynamically allocate matrices A, B, C&#xA;    double** A = (double**)malloc(m * sizeof(double*));&#xA;    double** B = (double**)malloc(n * sizeof(double*));&#xA;    double** C = (double**)malloc(m * sizeof(double*));&#xA;&#xA;    for (i = 0; i &amp;lt; m; i++) {&#xA;        A[i] = (double*)malloc(n * sizeof(double));&#xA;    }&#xA;    for (i = 0; i &amp;lt; n; i++) {&#xA;        B[i] = (double*)malloc(p * sizeof(double));&#xA;    }&#xA;    for (i = 0; i &amp;lt; m; i++) {&#xA;        C[i] = (double*)malloc(p * sizeof(double));&#xA;    }&#xA;&#xA;    // Initialize matrix A (2x3)&#xA;    double tempA[2][3] = {&#xA;        {1.0, 2.0, 3.0},&#xA;        {4.0, 5.0, 6.0}&#xA;    };&#xA;    for (i = 0; i &amp;lt; m; i++) {&#xA;        for (j = 0; j &amp;lt; n; j++) {&#xA;            A[i][j] = tempA[i][j];&#xA;        }&#xA;    }&#xA;&#xA;    // Initialize matrix B (3x2)&#xA;    double tempB[3][2] = {&#xA;        {7.0,  8.0},&#xA;        {9.0,  10.0},&#xA;        {11.0, 12.0}&#xA;    };&#xA;    for (i = 0; i &amp;lt; n; i++) {&#xA;        for (j = 0; j &amp;lt; p; j++) {&#xA;            B[i][j] = tempB[i][j];&#xA;        }&#xA;    }&#xA;&#xA;    // Start timing (using clock())&#xA;    clock_t start_time = clock();&#xA;&#xA;    // Compute matrix multiplication C = A * B&#xA;    matrix_multiply(A, B, C, m, n, p);&#xA;&#xA;    // End timing&#xA;    clock_t end_time = clock();&#xA;    double elapsed_time = (double)(end_time - start_time) / CLOCKS_PER_SEC;&#xA;&#xA;    // Print the resulting matrix C&#xA;    printf(&amp;#34;The resulting matrix A x B (2x2):\n&amp;#34;);&#xA;    for (i = 0; i &amp;lt; m; i++) {&#xA;        for (j = 0; j &amp;lt; p; j++) {&#xA;            printf(&amp;#34;%.2f &amp;#34;, C[i][j]);&#xA;        }&#xA;        printf(&amp;#34;\n&amp;#34;);&#xA;    }&#xA;&#xA;    // Print the time taken&#xA;    printf(&amp;#34;Time taken for C matrix multiplication: %.6f seconds\n&amp;#34;, elapsed_time);&#xA;&#xA;    // Free allocated memory&#xA;    for (i = 0; i &amp;lt; m; i++) {&#xA;        free(A[i]);&#xA;    }&#xA;    free(A);&#xA;&#xA;    for (i = 0; i &amp;lt; n; i++) {&#xA;        free(B[i]);&#xA;    }&#xA;    free(B);&#xA;&#xA;    for (i = 0; i &amp;lt; m; i++) {&#xA;        free(C[i]);&#xA;    }&#xA;    free(C);&#xA;&#xA;    return 0;&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Compilation Command&lt;/strong&gt;:&#xA;&lt;code&gt;gcc matrix_mul.c -o matrix_mul&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Assignment3</title>
+      <link>http://localhost/report/assignment3/</link>
+      <pubDate>Tue, 25 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost/report/assignment3/</guid>
+      <description>&lt;h1 id=&#34;assignment-3&#34;&gt;Assignment 3&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Student Name&lt;/strong&gt;: [liziao]&lt;br&gt;&#xA;&lt;strong&gt;Student ID&lt;/strong&gt;: [ZY2457B15]&lt;br&gt;&#xA;&lt;strong&gt;Submission Date&lt;/strong&gt;: [2025/4/20]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Assignment4</title>
+      <link>http://localhost/report/assignment4/</link>
+      <pubDate>Tue, 25 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost/report/assignment4/</guid>
+      <description>&lt;h1 id=&#34;assignment-4&#34;&gt;Assignment 4&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Student Name&lt;/strong&gt;: [liziao]&lt;br&gt;&#xA;&lt;strong&gt;Student ID&lt;/strong&gt;: [ZY2457B15]&lt;br&gt;&#xA;&lt;strong&gt;Submission Date&lt;/strong&gt;: [2025/4/20]&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Assignment1 | My Hugo Blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Matrix Multiplication Project Report
+Student Name: [liziao]
+Student ID: [ZY2457B15]
+Submission Date: [2025/3/25]
+System Configuration
+List your system configuration as table of content here here, including CPU model, memory size, operating system version, compiler version, python version.
+For Linux, check
+
+CPU Model: Intel(R) Xeon(R) Platinum 8352V CPU @ 2.10GHz
+Memory Size: 503 GiB
+Operating System Version: Ubuntu 5.15.0-94-generic (x86_64)
+Compiler Version: GCC 9.4.0
+Python Version: Python 3.8.10
+
+Implementation Details
+C Language Implementation
+
+Source Code:
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;  
+// Function: Perform matrix multiplication C = A * B
+// A: m x n, B: n x p, C: m x p
+void matrix_multiply(double** A, double** B, double** C, int m, int n, int p) {
+    int i, j, k;
+    // Triple nested loops for matrix multiplication
+    for (i = 0; i &lt; m; i&#43;&#43;) {
+        for (j = 0; j &lt; p; j&#43;&#43;) {
+            C[i][j] = 0.0;  // Initialize
+            for (k = 0; k &lt; n; k&#43;&#43;) {
+                C[i][j] &#43;= A[i][k] * B[k][j];
+            }
+        }
+    }
+}
+
+int main() {
+    // Example: A is 2x3, B is 3x2
+    int m = 2, n = 3, p = 2;
+    int i, j;
+
+    // Dynamically allocate matrices A, B, C
+    double** A = (double**)malloc(m * sizeof(double*));
+    double** B = (double**)malloc(n * sizeof(double*));
+    double** C = (double**)malloc(m * sizeof(double*));
+
+    for (i = 0; i &lt; m; i&#43;&#43;) {
+        A[i] = (double*)malloc(n * sizeof(double));
+    }
+    for (i = 0; i &lt; n; i&#43;&#43;) {
+        B[i] = (double*)malloc(p * sizeof(double));
+    }
+    for (i = 0; i &lt; m; i&#43;&#43;) {
+        C[i] = (double*)malloc(p * sizeof(double));
+    }
+
+    // Initialize matrix A (2x3)
+    double tempA[2][3] = {
+        {1.0, 2.0, 3.0},
+        {4.0, 5.0, 6.0}
+    };
+    for (i = 0; i &lt; m; i&#43;&#43;) {
+        for (j = 0; j &lt; n; j&#43;&#43;) {
+            A[i][j] = tempA[i][j];
+        }
+    }
+
+    // Initialize matrix B (3x2)
+    double tempB[3][2] = {
+        {7.0,  8.0},
+        {9.0,  10.0},
+        {11.0, 12.0}
+    };
+    for (i = 0; i &lt; n; i&#43;&#43;) {
+        for (j = 0; j &lt; p; j&#43;&#43;) {
+            B[i][j] = tempB[i][j];
+        }
+    }
+
+    // Start timing (using clock())
+    clock_t start_time = clock();
+
+    // Compute matrix multiplication C = A * B
+    matrix_multiply(A, B, C, m, n, p);
+
+    // End timing
+    clock_t end_time = clock();
+    double elapsed_time = (double)(end_time - start_time) / CLOCKS_PER_SEC;
+
+    // Print the resulting matrix C
+    printf(&#34;The resulting matrix A x B (2x2):\n&#34;);
+    for (i = 0; i &lt; m; i&#43;&#43;) {
+        for (j = 0; j &lt; p; j&#43;&#43;) {
+            printf(&#34;%.2f &#34;, C[i][j]);
+        }
+        printf(&#34;\n&#34;);
+    }
+
+    // Print the time taken
+    printf(&#34;Time taken for C matrix multiplication: %.6f seconds\n&#34;, elapsed_time);
+
+    // Free allocated memory
+    for (i = 0; i &lt; m; i&#43;&#43;) {
+        free(A[i]);
+    }
+    free(A);
+
+    for (i = 0; i &lt; n; i&#43;&#43;) {
+        free(B[i]);
+    }
+    free(B);
+
+    for (i = 0; i &lt; m; i&#43;&#43;) {
+        free(C[i]);
+    }
+    free(C);
+
+    return 0;
+}
+
+
+Compilation Command:
+gcc matrix_mul.c -o matrix_mul">
+    <meta name="generator" content="Hugo 0.146.6">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://localhost/report/assignment1/">
+    
+
+    <meta property="og:url" content="http://localhost/report/assignment1/">
+  <meta property="og:site_name" content="My Hugo Blog">
+  <meta property="og:title" content="Assignment1">
+  <meta property="og:description" content="Matrix Multiplication Project Report Student Name: [liziao]
+Student ID: [ZY2457B15]
+Submission Date: [2025/3/25]
+System Configuration List your system configuration as table of content here here, including CPU model, memory size, operating system version, compiler version, python version.
+For Linux, check
+CPU Model: Intel(R) Xeon(R) Platinum 8352V CPU @ 2.10GHz Memory Size: 503 GiB Operating System Version: Ubuntu 5.15.0-94-generic (x86_64) Compiler Version: GCC 9.4.0 Python Version: Python 3.8.10 Implementation Details C Language Implementation Source Code: #include &lt;stdio.h&gt; #include &lt;stdlib.h&gt; #include &lt;time.h&gt; // Function: Perform matrix multiplication C = A * B // A: m x n, B: n x p, C: m x p void matrix_multiply(double** A, double** B, double** C, int m, int n, int p) { int i, j, k; // Triple nested loops for matrix multiplication for (i = 0; i &lt; m; i&#43;&#43;) { for (j = 0; j &lt; p; j&#43;&#43;) { C[i][j] = 0.0; // Initialize for (k = 0; k &lt; n; k&#43;&#43;) { C[i][j] &#43;= A[i][k] * B[k][j]; } } } } int main() { // Example: A is 2x3, B is 3x2 int m = 2, n = 3, p = 2; int i, j; // Dynamically allocate matrices A, B, C double** A = (double**)malloc(m * sizeof(double*)); double** B = (double**)malloc(n * sizeof(double*)); double** C = (double**)malloc(m * sizeof(double*)); for (i = 0; i &lt; m; i&#43;&#43;) { A[i] = (double*)malloc(n * sizeof(double)); } for (i = 0; i &lt; n; i&#43;&#43;) { B[i] = (double*)malloc(p * sizeof(double)); } for (i = 0; i &lt; m; i&#43;&#43;) { C[i] = (double*)malloc(p * sizeof(double)); } // Initialize matrix A (2x3) double tempA[2][3] = { {1.0, 2.0, 3.0}, {4.0, 5.0, 6.0} }; for (i = 0; i &lt; m; i&#43;&#43;) { for (j = 0; j &lt; n; j&#43;&#43;) { A[i][j] = tempA[i][j]; } } // Initialize matrix B (3x2) double tempB[3][2] = { {7.0, 8.0}, {9.0, 10.0}, {11.0, 12.0} }; for (i = 0; i &lt; n; i&#43;&#43;) { for (j = 0; j &lt; p; j&#43;&#43;) { B[i][j] = tempB[i][j]; } } // Start timing (using clock()) clock_t start_time = clock(); // Compute matrix multiplication C = A * B matrix_multiply(A, B, C, m, n, p); // End timing clock_t end_time = clock(); double elapsed_time = (double)(end_time - start_time) / CLOCKS_PER_SEC; // Print the resulting matrix C printf(&#34;The resulting matrix A x B (2x2):\n&#34;); for (i = 0; i &lt; m; i&#43;&#43;) { for (j = 0; j &lt; p; j&#43;&#43;) { printf(&#34;%.2f &#34;, C[i][j]); } printf(&#34;\n&#34;); } // Print the time taken printf(&#34;Time taken for C matrix multiplication: %.6f seconds\n&#34;, elapsed_time); // Free allocated memory for (i = 0; i &lt; m; i&#43;&#43;) { free(A[i]); } free(A); for (i = 0; i &lt; n; i&#43;&#43;) { free(B[i]); } free(B); for (i = 0; i &lt; m; i&#43;&#43;) { free(C[i]); } free(C); return 0; } Compilation Command: gcc matrix_mul.c -o matrix_mul">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="report">
+    <meta property="article:published_time" content="2025-03-25T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-25T00:00:00+00:00">
+
+  <meta itemprop="name" content="Assignment1">
+  <meta itemprop="description" content="Matrix Multiplication Project Report Student Name: [liziao]
+Student ID: [ZY2457B15]
+Submission Date: [2025/3/25]
+System Configuration List your system configuration as table of content here here, including CPU model, memory size, operating system version, compiler version, python version.
+For Linux, check
+CPU Model: Intel(R) Xeon(R) Platinum 8352V CPU @ 2.10GHz Memory Size: 503 GiB Operating System Version: Ubuntu 5.15.0-94-generic (x86_64) Compiler Version: GCC 9.4.0 Python Version: Python 3.8.10 Implementation Details C Language Implementation Source Code: #include &lt;stdio.h&gt; #include &lt;stdlib.h&gt; #include &lt;time.h&gt; // Function: Perform matrix multiplication C = A * B // A: m x n, B: n x p, C: m x p void matrix_multiply(double** A, double** B, double** C, int m, int n, int p) { int i, j, k; // Triple nested loops for matrix multiplication for (i = 0; i &lt; m; i&#43;&#43;) { for (j = 0; j &lt; p; j&#43;&#43;) { C[i][j] = 0.0; // Initialize for (k = 0; k &lt; n; k&#43;&#43;) { C[i][j] &#43;= A[i][k] * B[k][j]; } } } } int main() { // Example: A is 2x3, B is 3x2 int m = 2, n = 3, p = 2; int i, j; // Dynamically allocate matrices A, B, C double** A = (double**)malloc(m * sizeof(double*)); double** B = (double**)malloc(n * sizeof(double*)); double** C = (double**)malloc(m * sizeof(double*)); for (i = 0; i &lt; m; i&#43;&#43;) { A[i] = (double*)malloc(n * sizeof(double)); } for (i = 0; i &lt; n; i&#43;&#43;) { B[i] = (double*)malloc(p * sizeof(double)); } for (i = 0; i &lt; m; i&#43;&#43;) { C[i] = (double*)malloc(p * sizeof(double)); } // Initialize matrix A (2x3) double tempA[2][3] = { {1.0, 2.0, 3.0}, {4.0, 5.0, 6.0} }; for (i = 0; i &lt; m; i&#43;&#43;) { for (j = 0; j &lt; n; j&#43;&#43;) { A[i][j] = tempA[i][j]; } } // Initialize matrix B (3x2) double tempB[3][2] = { {7.0, 8.0}, {9.0, 10.0}, {11.0, 12.0} }; for (i = 0; i &lt; n; i&#43;&#43;) { for (j = 0; j &lt; p; j&#43;&#43;) { B[i][j] = tempB[i][j]; } } // Start timing (using clock()) clock_t start_time = clock(); // Compute matrix multiplication C = A * B matrix_multiply(A, B, C, m, n, p); // End timing clock_t end_time = clock(); double elapsed_time = (double)(end_time - start_time) / CLOCKS_PER_SEC; // Print the resulting matrix C printf(&#34;The resulting matrix A x B (2x2):\n&#34;); for (i = 0; i &lt; m; i&#43;&#43;) { for (j = 0; j &lt; p; j&#43;&#43;) { printf(&#34;%.2f &#34;, C[i][j]); } printf(&#34;\n&#34;); } // Print the time taken printf(&#34;Time taken for C matrix multiplication: %.6f seconds\n&#34;, elapsed_time); // Free allocated memory for (i = 0; i &lt; m; i&#43;&#43;) { free(A[i]); } free(A); for (i = 0; i &lt; n; i&#43;&#43;) { free(B[i]); } free(B); for (i = 0; i &lt; m; i&#43;&#43;) { free(C[i]); } free(C); return 0; } Compilation Command: gcc matrix_mul.c -o matrix_mul">
+  <meta itemprop="datePublished" content="2025-03-25T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-03-25T00:00:00+00:00">
+  <meta itemprop="wordCount" content="844">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Assignment1">
+  <meta name="twitter:description" content="Matrix Multiplication Project Report Student Name: [liziao]
+Student ID: [ZY2457B15]
+Submission Date: [2025/3/25]
+System Configuration List your system configuration as table of content here here, including CPU model, memory size, operating system version, compiler version, python version.
+For Linux, check
+CPU Model: Intel(R) Xeon(R) Platinum 8352V CPU @ 2.10GHz Memory Size: 503 GiB Operating System Version: Ubuntu 5.15.0-94-generic (x86_64) Compiler Version: GCC 9.4.0 Python Version: Python 3.8.10 Implementation Details C Language Implementation Source Code: #include &lt;stdio.h&gt; #include &lt;stdlib.h&gt; #include &lt;time.h&gt; // Function: Perform matrix multiplication C = A * B // A: m x n, B: n x p, C: m x p void matrix_multiply(double** A, double** B, double** C, int m, int n, int p) { int i, j, k; // Triple nested loops for matrix multiplication for (i = 0; i &lt; m; i&#43;&#43;) { for (j = 0; j &lt; p; j&#43;&#43;) { C[i][j] = 0.0; // Initialize for (k = 0; k &lt; n; k&#43;&#43;) { C[i][j] &#43;= A[i][k] * B[k][j]; } } } } int main() { // Example: A is 2x3, B is 3x2 int m = 2, n = 3, p = 2; int i, j; // Dynamically allocate matrices A, B, C double** A = (double**)malloc(m * sizeof(double*)); double** B = (double**)malloc(n * sizeof(double*)); double** C = (double**)malloc(m * sizeof(double*)); for (i = 0; i &lt; m; i&#43;&#43;) { A[i] = (double*)malloc(n * sizeof(double)); } for (i = 0; i &lt; n; i&#43;&#43;) { B[i] = (double*)malloc(p * sizeof(double)); } for (i = 0; i &lt; m; i&#43;&#43;) { C[i] = (double*)malloc(p * sizeof(double)); } // Initialize matrix A (2x3) double tempA[2][3] = { {1.0, 2.0, 3.0}, {4.0, 5.0, 6.0} }; for (i = 0; i &lt; m; i&#43;&#43;) { for (j = 0; j &lt; n; j&#43;&#43;) { A[i][j] = tempA[i][j]; } } // Initialize matrix B (3x2) double tempB[3][2] = { {7.0, 8.0}, {9.0, 10.0}, {11.0, 12.0} }; for (i = 0; i &lt; n; i&#43;&#43;) { for (j = 0; j &lt; p; j&#43;&#43;) { B[i][j] = tempB[i][j]; } } // Start timing (using clock()) clock_t start_time = clock(); // Compute matrix multiplication C = A * B matrix_multiply(A, B, C, m, n, p); // End timing clock_t end_time = clock(); double elapsed_time = (double)(end_time - start_time) / CLOCKS_PER_SEC; // Print the resulting matrix C printf(&#34;The resulting matrix A x B (2x2):\n&#34;); for (i = 0; i &lt; m; i&#43;&#43;) { for (j = 0; j &lt; p; j&#43;&#43;) { printf(&#34;%.2f &#34;, C[i][j]); } printf(&#34;\n&#34;); } // Print the time taken printf(&#34;Time taken for C matrix multiplication: %.6f seconds\n&#34;, elapsed_time); // Free allocated memory for (i = 0; i &lt; m; i&#43;&#43;) { free(A[i]); } free(A); for (i = 0; i &lt; n; i&#43;&#43;) { free(B[i]); } free(B); for (i = 0; i &lt; m; i&#43;&#43;) { free(C[i]); } free(C); return 0; } Compilation Command: gcc matrix_mul.c -o matrix_mul">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        My Hugo Blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Reports
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">Assignment1</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-03-25T00:00:00Z">March 25, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h1 id="matrix-multiplication-project-report">Matrix Multiplication Project Report</h1>
+<p><strong>Student Name</strong>: [liziao]<br>
+<strong>Student ID</strong>: [ZY2457B15]<br>
+<strong>Submission Date</strong>: [2025/3/25]</p>
+<h2 id="system-configuration">System Configuration</h2>
+<p>List your system configuration as <strong>table of content here</strong> here, including CPU model, memory size, operating system version, compiler version, python version.</p>
+<p>For Linux, check</p>
+<ul>
+<li><strong>CPU Model</strong>: Intel(R) Xeon(R) Platinum 8352V CPU @ 2.10GHz</li>
+<li><strong>Memory Size</strong>: 503 GiB</li>
+<li><strong>Operating System Version</strong>: Ubuntu 5.15.0-94-generic (x86_64)</li>
+<li><strong>Compiler Version</strong>: GCC 9.4.0</li>
+<li><strong>Python Version</strong>: Python 3.8.10</li>
+</ul>
+<h2 id="implementation-details">Implementation Details</h2>
+<h3 id="c-language-implementation">C Language Implementation</h3>
+<ul>
+<li><strong>Source Code</strong>:</li>
+</ul>
+<pre tabindex="0"><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;  
+// Function: Perform matrix multiplication C = A * B
+// A: m x n, B: n x p, C: m x p
+void matrix_multiply(double** A, double** B, double** C, int m, int n, int p) {
+    int i, j, k;
+    // Triple nested loops for matrix multiplication
+    for (i = 0; i &lt; m; i++) {
+        for (j = 0; j &lt; p; j++) {
+            C[i][j] = 0.0;  // Initialize
+            for (k = 0; k &lt; n; k++) {
+                C[i][j] += A[i][k] * B[k][j];
+            }
+        }
+    }
+}
+
+int main() {
+    // Example: A is 2x3, B is 3x2
+    int m = 2, n = 3, p = 2;
+    int i, j;
+
+    // Dynamically allocate matrices A, B, C
+    double** A = (double**)malloc(m * sizeof(double*));
+    double** B = (double**)malloc(n * sizeof(double*));
+    double** C = (double**)malloc(m * sizeof(double*));
+
+    for (i = 0; i &lt; m; i++) {
+        A[i] = (double*)malloc(n * sizeof(double));
+    }
+    for (i = 0; i &lt; n; i++) {
+        B[i] = (double*)malloc(p * sizeof(double));
+    }
+    for (i = 0; i &lt; m; i++) {
+        C[i] = (double*)malloc(p * sizeof(double));
+    }
+
+    // Initialize matrix A (2x3)
+    double tempA[2][3] = {
+        {1.0, 2.0, 3.0},
+        {4.0, 5.0, 6.0}
+    };
+    for (i = 0; i &lt; m; i++) {
+        for (j = 0; j &lt; n; j++) {
+            A[i][j] = tempA[i][j];
+        }
+    }
+
+    // Initialize matrix B (3x2)
+    double tempB[3][2] = {
+        {7.0,  8.0},
+        {9.0,  10.0},
+        {11.0, 12.0}
+    };
+    for (i = 0; i &lt; n; i++) {
+        for (j = 0; j &lt; p; j++) {
+            B[i][j] = tempB[i][j];
+        }
+    }
+
+    // Start timing (using clock())
+    clock_t start_time = clock();
+
+    // Compute matrix multiplication C = A * B
+    matrix_multiply(A, B, C, m, n, p);
+
+    // End timing
+    clock_t end_time = clock();
+    double elapsed_time = (double)(end_time - start_time) / CLOCKS_PER_SEC;
+
+    // Print the resulting matrix C
+    printf(&#34;The resulting matrix A x B (2x2):\n&#34;);
+    for (i = 0; i &lt; m; i++) {
+        for (j = 0; j &lt; p; j++) {
+            printf(&#34;%.2f &#34;, C[i][j]);
+        }
+        printf(&#34;\n&#34;);
+    }
+
+    // Print the time taken
+    printf(&#34;Time taken for C matrix multiplication: %.6f seconds\n&#34;, elapsed_time);
+
+    // Free allocated memory
+    for (i = 0; i &lt; m; i++) {
+        free(A[i]);
+    }
+    free(A);
+
+    for (i = 0; i &lt; n; i++) {
+        free(B[i]);
+    }
+    free(B);
+
+    for (i = 0; i &lt; m; i++) {
+        free(C[i]);
+    }
+    free(C);
+
+    return 0;
+}
+</code></pre><ul>
+<li>
+<p><strong>Compilation Command</strong>:
+<code>gcc matrix_mul.c -o matrix_mul</code></p>
+</li>
+<li>
+<p><strong>Execution Command</strong>:
+<code>./matrix_mul</code></p>
+</li>
+</ul>
+<h3 id="python-language-implementation">Python Language Implementation</h3>
+<ul>
+<li><strong>Source Code</strong>:</li>
+</ul>
+<pre tabindex="0"><code>import time
+def matrix_multiply(A, B):
+    &#34;&#34;&#34;
+    Calculate the product of matrix A and matrix B, and return the resulting matrix.
+    Assumptions:
+        - A is an m × n matrix
+        - B is an n × p matrix
+    Hence, the resulting matrix C is an m × p matrix.
+    &#34;&#34;&#34;
+    m = len(A)
+    n = len(A[0])
+    p = len(B[0])
+
+    # Initialize the result matrix C (size: m × p) with zeros
+    C = [[0 for _ in range(p)] for _ in range(m)]
+
+    # Triple nested loops for matrix multiplication
+    for i in range(m):
+        for j in range(p):
+            for k in range(n):
+                C[i][j] += A[i][k] * B[k][j]
+
+    return C
+
+if __name__ == &#34;__main__&#34;:
+    A = [
+        [1, 2, 3],
+        [4, 5, 6]
+    ]  # 2 x 3
+
+    B = [
+        [7,  8],
+        [9,  10],
+        [11, 12]
+    ]  # 3 x 2
+
+    # Start timing
+    start_time = time.time()
+
+    # Perform matrix multiplication
+    C = matrix_multiply(A, B)
+
+    # End timing
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+
+    # Print the result
+    print(&#34;Matrix A × B:&#34;)
+    for row in C:
+        print(row)
+
+    # Print the elapsed time
+    print(f&#34;Time taken for Python matrix multiplication: {elapsed_time:.6f} seconds&#34;)
+</code></pre><ul>
+<li><strong>Execution Command</strong>:</li>
+</ul>
+<pre tabindex="0"><code>python matrix_mul.py
+</code></pre><h2 id="algorithm-verification">Algorithm Verification</h2>
+<ul>
+<li><strong>Correctness</strong>:
+test matrix A:</li>
+</ul>
+<pre tabindex="0"><code>[7, 8],
+[9, 10],
+[11,12]
+</code></pre><p>test matrix B:</p>
+<pre tabindex="0"><code>[1, 2, 3],
+[4, 5, 6]
+</code></pre><p>result for c:</p>
+<pre tabindex="0"><code>The resulting matrix A x B (2x2):
+58.00 64.00 
+139.00 154.00 
+</code></pre><p>result for python:</p>
+<pre tabindex="0"><code>The result of matrix A × matrix B is:
+[58, 64]
+[139, 154]
+</code></pre><h2 id="performance-analysisbonus">Performance Analysis【bonus】</h2>
+<ul>
+<li>
+<p><strong>Execution Times</strong>:
+Time taken for C matrix multiplication: 0.000003 seconds
+Time taken for Python matrix multiplication: 0.000016 seconds</p>
+</li>
+<li>
+<p><strong>Analysis</strong>:
+Python is an interpreted language, which comes with the overhead of the interpreter itself as well as its runtime scheduling. Invoking functions, creating lists, and other operations all involve additional overhead at the Python layer.
+C is a compiled language that generates machine code directly, allowing it to execute more efficiently at runtime and operate closer to the hardware.</p>
+</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Through this project, I learned how to compile and run different types of programming languages in a Linux environment, and I also learned how to use Markdown for documentation.</p>
+<h2 id="references">References</h2>
+<h2 id="appendix">Appendix</h2>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost/" >
+    &copy;  My Hugo Blog 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
