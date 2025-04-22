@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "C:/Users/liziao/myblog",
+	"sourceRoot": "D:/GitHub/myblog",
 	"sources": [
 		"ananke/css/main.css"
 	],
