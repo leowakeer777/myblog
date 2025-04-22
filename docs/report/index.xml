@@ -6,14 +6,14 @@
     <description>Recent content in Reports on My Hugo Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost/report/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Assignment2</title>
       <link>http://localhost/report/assignment2/</link>
-      <pubDate>Sun, 20 Apr 2025 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost/report/assignment2/</guid>
-      <description>&lt;h1 id=&#34;assignment-2-report-static-personal-blog-website&#34;&gt;Assignment 2 Report: Static Personal Blog Website&lt;/h1&gt;&#xA;&lt;p&gt;Name: liziao&lt;br&gt;&#xA;Student ID: [Your ID Here]&lt;br&gt;&#xA;Date: 2025/4/20&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-website-setup--tools&#34;&gt;1. Website Setup &amp;amp; Tools&lt;/h2&gt;&#xA;&lt;p&gt;This static website was built using Hugo, a fast and flexible static site generator. The theme used is Ananke, which is lightweight and easy to customize.&lt;/p&gt;&#xA;&lt;p&gt;The site consists of four assignment pages:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;assignment1.md&lt;/li&gt;&#xA;&lt;li&gt;assignment2.md&lt;/li&gt;&#xA;&lt;li&gt;assignment3.md&lt;/li&gt;&#xA;&lt;li&gt;assignment4.md&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;A custom homepage was created to display only four navigation links (Assignment 1 to Assignment 4), without any extra blog content.&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;assignment-2-report-static-personal-blog-website&#34;&gt;Assignment 2 Report: Static Personal Blog Website&lt;/h1&gt;&#xA;&lt;p&gt;Name: liziao&lt;br&gt;&#xA;Student ID: ZY2457B15&#xA;Date: 2025/4/22&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-website-setup--tools&#34;&gt;1. Website Setup &amp;amp; Tools&lt;/h2&gt;&#xA;&lt;p&gt;This static website was built using Hugo, a fast and flexible static site generator.&lt;br&gt;&#xA;The theme used is Ananke, which is lightweight and easy to customize.&lt;/p&gt;&#xA;&lt;p&gt;The site consists of four assignment pages:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;assignment1.md&lt;/li&gt;&#xA;&lt;li&gt;assignment2.md&lt;/li&gt;&#xA;&lt;li&gt;assignment3.md&lt;/li&gt;&#xA;&lt;li&gt;assignment4.md&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;A custom homepage was created to display only four navigation links (Assignment 1 to Assignment 4), without any extra blog content.&lt;br&gt;&#xA;The homepage was manually configured via &lt;code&gt;_index.md&lt;/code&gt; and a custom &lt;code&gt;index.html&lt;/code&gt; layout to hide default post listings.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Assignment1</title>
