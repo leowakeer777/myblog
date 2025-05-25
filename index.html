@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Personal Homepage</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
     /* Top header with background image */
     header {
       background: url('/myweb/background.jpg') no-repeat center center;
@@ -20,12 +24,24 @@
       padding: 1rem 2rem;
       border-radius: 8px;
     }
-    .header-box h1 { margin: 0 0 0.5rem; color: #333; }
-    /* Two-column layout with dashed divider */
-    .content { display: flex; padding: 2rem; }
-    .intro { flex: 1; padding-right: 2rem; }
-    .assignments {
-      flex: 1; padding-left: 2rem;
+    .header-box h1 {
+      margin: 0 0 0.5rem;
+      color: #333;
+    }
+    /* Two-column layout */
+    .content {
+      display: flex;
+      padding: 2rem;
+    }
+    /* Left: About Me 1/3 */
+    .intro {
+      flex: 1;
+      padding-right: 2rem;
+    }
+    /* Right: Assignments 2/3 */
+    .assignment {
+      flex: 2;
+      padding-left: 2rem;
       border-left: 2px dashed #ccc;
     }
     h2.title {
@@ -36,14 +52,31 @@
       color: #333;
     }
     .intro img {
-      display: block; margin: 1rem auto;
-      width: 150px; border-radius: 50%;
+      display: block;
+      margin: 1rem auto;
+      width: 150px;
+      border-radius: 50%;
     }
-    ul { list-style: none; padding: 0; }
-    ul li { margin: 0.5rem 0; }
-    ul li a { color: #4CAF50; text-decoration: none; }
-    ul li a:hover { text-decoration: underline; }
-    footer { background: #f4f4f4; text-align: center; padding: 1rem; margin-top: 2rem; }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      margin: 0.5rem 0;
+    }
+    ul li a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+    ul li a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      background: #f4f4f4;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
   </style>
 </head>
 <body>
@@ -64,6 +97,7 @@
         Research Focus: Airport Operations Algorithm Optimization
       </p>
     </div>
+
     <div class="assignment" id="assignment">
       <h2 class="title">Assignments</h2>
       <p>Click the links below to view assignment details:</p>
