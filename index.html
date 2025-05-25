@@ -1,16 +1,65 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>个人主页</title>
+  <title>Personal Homepage</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header { background: #4CAF50; color: white; padding: 1rem; text-align: center; }
-    nav { background: #f4f4f4; padding: 0.5rem; }
-    nav a { margin: 0 1rem; color: #333; text-decoration: none; }
-    section { padding: 2rem; }
-    h2 { border-bottom: 2px solid #4CAF50; padding-bottom: 0.5rem; }
+    /* Top header with background image */
+    header {
+      background: url('D:myweb/background.jpg') no-repeat center center;
+      background-size: cover;
+      padding: 12rem 1rem;
+      text-align: center;
+    }
+    /* White box for title and navigation */
+    .header-box {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 1rem 2rem;
+      border-radius: 8px;
+    }
+    .header-box h1 {
+      margin: 0 0 0.5rem;
+      color: #333;
+    }
+    .header-box nav a {
+      margin: 0 1rem;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .header-box nav a:hover {
+      text-decoration: underline;
+    }
+    /* Two-column layout with dashed divider */
+    .content {
+      display: flex;
+      padding: 2rem;
+    }
+    .intro {
+      flex: 1;
+      padding-right: 2rem;
+    }
+    .assignments {
+      flex: 1;
+      padding-left: 2rem;
+      border-left: 2px dashed #ccc;
+    }
+    h2.title {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      color: #333;
+    }
+    .intro img {
+      display: block;
+      margin: 1rem auto;
+      width: 150px;
+      border-radius: 50%;
+    }
     ul { list-style: none; padding: 0; }
     ul li { margin: 0.5rem 0; }
     ul li a { color: #4CAF50; text-decoration: none; }
@@ -20,31 +69,36 @@
 </head>
 <body>
   <header>
-    <h1>张三的个人主页</h1>
+    <div class="header-box">
+      <h1>Li Ziao's Personal Homepage</h1>
+    </div>
   </header>
-  <nav>
-    <a href="#intro">个人简介</a>
-    <a href="#assignments">作业</a>
-  </nav>
 
-  <section id="intro">
-    <h2>个人简介</h2>
-    <p>你好！我是张三，目前在XXX大学攻读XXX专业，研究方向包括XXX和XXX。</p>
-  </section>
-
-  <section id="assignments">
-    <h2>作业</h2>
-    <p>点击下面的链接查看作业内容：</p>
-    <ul>
-      <li><a href="assignment/assignment1.md" target="_blank">作业1</a></li>
-      <li><a href="assignment/assignment2.md" target="_blank">作业2</a></li>
-      <li><a href="assignment/assignment3.md" target="_blank">作业3</a></li>
-      <li><a href="assignment/assignment4.md" target="_blank">作业4</a></li>
-    </ul>
-  </section>
+  <div class="content">
+    <div class="intro" id="intro">
+      <h2 class="title">About Me</h2>
+      <img src="D:myweb/liziao.jpg" alt="Photo of Liziao" />
+      <h3 style="text-align:center;">liziao</h3>
+      <p style="text-align:center;">
+        2020-2024 University of Science and Technology Beijing, Automation<br>
+        2024-2027 Beihang University, Air Transportation<br>
+        Research Focus: Airport Operations Algorithm Optimization
+      </p>
+    </div>
+    <div class="assignments" id="assignments">
+      <h2 class="title">Assignments</h2>
+      <p>Click the links below to view assignment details:</p>
+      <ul>
+        <li><a href="D:myweb/assignment/assignment1.md" target="_blank">Assignment 1</a></li>
+        <li><a href="D:myweb/assignment/assignment2.md" target="_blank">Assignment 2</a></li>
+        <li><a href="D:myweb/assignment/assignment3.md" target="_blank">Assignment 3</a></li>
+        <li><a href="D:myweb/assignment/assignment4.md" target="_blank">Assignment 4</a></li>
+      </ul>
+    </div>
+  </div>
 
   <footer>
-    <p>&copy; 2025 张三</p>
+    <p>&copy; 2025 Li Ziao</p>
   </footer>
 </body>
 </html>
